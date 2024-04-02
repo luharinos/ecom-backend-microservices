@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint && echo \"All files pass linting.\n\" || (echo \"\nSome files did not pass linting.\nUse \\`npm run lint:fix\\` to fix some of them.\nMake sure to commit these changes before pushing.\n\"; false)
+npm run test:circular-dependencies
